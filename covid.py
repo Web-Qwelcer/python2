@@ -4,8 +4,9 @@ URL = 'https://api.covid19api.com/summary'
 covid19 = requests.get(URL)
 covid19_global = covid19.json()['Global']
 covid19 = covid19.json()['Countries']
-tytles = [item for item in list(covid19[0].keys()) if item not in [
-    'ID', 'CountryCode', "Slug", "Date", "Premium"]]
+pprint(covid19)
+pprint(covid19_global['Date'])
+tytles = [item for item in list(covid19[0].keys()) if item not in ['ID', 'CountryCode', "Slug", "Date", "Premium"]]
 
 def byNewConfirmed_key(covid19):
     return covid19['NewConfirmed']
